@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @next/next/no-html-link-for-pages */
 /* The hero uses an audited local WebP with fixed dimensions and responsive sizing. */
 /* eslint-disable @next/next/no-img-element */
 
@@ -32,7 +33,7 @@ const faqs=[
   ["How does a project begin?","Tell us the problem, goal, or idea. We clarify the scope, recommend an approach, and provide the next steps before development starts."],
 ];
 
-function Brand(){return <a href="#top" className="brand" aria-label="OceanBrown home"><span className="brand-mark">OB</span><span>OceanBrown</span></a>}
+function Brand(){return <a href="/#top" className="brand" aria-label="OceanBrown home"><span className="brand-mark">OB</span><span>OceanBrown</span></a>}
 
 export default function Home(){
  const [menu,setMenu]=useState(false),[dark,setDark]=useState(true),[slide,setSlide]=useState(0),[product,setProduct]=useState(0),[faq,setFaq]=useState<number|null>(0),[sent,setSent]=useState("");
