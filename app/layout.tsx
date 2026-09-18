@@ -11,7 +11,11 @@ export const metadata: Metadata = {
   openGraph: { title: "OceanBrown — Digital products built for real needs", description: "Custom software, websites, mobile apps, automation, and telecom solutions from The Gambia.", type: "website", locale: "en_GB", siteName: "OceanBrown", url: "/", images: [{url:"/oceanbrown-logo.png",width:629,height:129,alt:"OceanBrown — Software Development and IT Services"}] },
   twitter: { card: "summary_large_image", title: "OceanBrown — Digital products built for real needs", description: "Custom software, websites, mobile apps, automation, and telecom solutions from The Gambia.", images: ["/oceanbrown-logo.png"] },
   robots: { index: true, follow: true },
-  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.png",
+  },
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: [{media:"(prefers-color-scheme: light)",color:"#f7f9fb"},{media:"(prefers-color-scheme: dark)",color:"#06131d"}] };
