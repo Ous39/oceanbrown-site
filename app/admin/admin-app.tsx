@@ -1,17 +1,18 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
-import { Activity, BookOpen, ChevronRight, FileText, Globe2, HelpCircle, Inbox, LayoutDashboard, Layers3, LogOut, Menu, Moon, Package, Plus, RefreshCw, Search, Settings, ShieldCheck, Sun, Trash2, X } from "lucide-react";
+import { Activity, BookOpen, Building2, ChevronRight, Factory, FileText, Globe2, HelpCircle, Inbox, LayoutDashboard, Layers3, LogOut, Menu, Moon, Package, Plus, RefreshCw, Search, Settings, ShieldCheck, Sun, Trash2, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 type Item={id:number;module:string;title:string;slug:string;summary:string;body:string;status:string;sortOrder:number;publishAt?:string;seoTitle:string;seoDescription:string;updatedAt:string};
 type Inquiry={id:number;name:string;contact:string;service:string;message:string;status:string;createdAt:string};
 const modules=[
  ["dashboard","Dashboard",LayoutDashboard],["hero","Hero slides",Layers3],["services","Services",Globe2],
- ["products","Products",Package],["faq","FAQs",HelpCircle],["settings","Site settings",Settings],
+ ["products","Products",Package],["industries","Industries",Factory],["company","Company",Building2],
+ ["faq","FAQs",HelpCircle],["settings","Site settings",Settings],
  ["blog","Website insights",BookOpen],["inquiries","Client enquiries",Inbox],
 ] as const;
-const editable=new Set(["hero","services","products","faq","settings","blog"]);
+const editable=new Set(["hero","services","products","industries","company","faq","settings","blog"]);
 const blank=(module:string):Partial<Item>=>({module,title:"",slug:"",summary:"",body:"",status:"draft",sortOrder:0,seoTitle:"",seoDescription:""});
 
 export default function AdminApp({user}:{user:{name:string,email:string}}){
