@@ -1,0 +1,4 @@
+import { NextRequest, NextResponse } from "next/server";
+import { isSameOrigin, setAdminSession, verifyAdminPassword } from "../../../../lib/auth";
+import { clientKey, rateLimit } from "../../../../lib/rate-limit";
+export async function POST(request:NextRequest){if(!isSameOrigin(request))return NextResponse.json({error:"Invalid origin"},{status:403});if(!rateLimit(clientKey(request,"login"),5,15*60_000))return NextResponse.json({error:"Too many attempts. Try again in 15 minutes."},{status:429});const body=await request.json().catch(()=>null) as {email?:string;password?:string}|null;const email=String(body?.email||"").toLowerCase().trim();const expected=(process.env.ADMIN_EMAIL||"admin@oceanbrown.gm").toLowerCase();if(email!==expected||!verifyAdminPassword(String(body?.password||"")))return NextResponse.json({error:"Incorrect email or password."},{status:401});await setAdminSession();return NextResponse.json({ok:true})}

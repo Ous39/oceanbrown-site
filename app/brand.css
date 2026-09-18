@@ -1,0 +1,14 @@
+/* Official OceanBrown identity */
+.brand{display:inline-flex;background:#fff;border:1px solid #dfe7ee;border-radius:.65rem;padding:.32rem .52rem;box-shadow:0 8px 25px #001b3428}
+.brand-logo{display:block;width:230px;height:auto}
+footer .brand{box-shadow:none}
+.admin-brand{position:relative;background:#fff;border:1px solid #dce6ed;border-radius:.7rem;padding:.45rem!important;margin:0 .15rem 1rem}
+.admin-brand>img{display:block;width:100%;height:auto}
+.admin-brand>button{position:absolute;right:.25rem;top:calc(100% + .35rem);background:var(--panel);border:1px solid var(--line);border-radius:.4rem}
+.login-brand{display:block!important;background:#fff;border:1px solid #dbe5ec;border-radius:.7rem;padding:.55rem}
+.login-brand img{display:block;width:min(310px,100%);height:auto;margin:auto}
+.form-brand{background:#fff;border:1px solid #dce6ed;border-radius:.6rem;padding:.28rem .42rem}
+.form-brand img{display:block;width:210px;height:auto}
+@media(max-width:700px){.brand-logo{width:185px}.brand{padding:.26rem .4rem}}
+@media(max-width:620px){.form-brand img{width:155px}}
+@media(max-width:370px){.brand-logo{width:145px}}

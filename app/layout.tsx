@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import "./brand.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://oceanbrown.gm"),
@@ -7,8 +8,8 @@ export const metadata: Metadata = {
   description: "OceanBrown builds custom software, mobile apps, websites, telecom integrations, automation, and digital products in The Gambia.",
   keywords: ["software development Gambia", "web development Gambia", "mobile app developer Gambia", "OceanBrown", "digital solutions Gambia"],
   alternates: { canonical: "/" },
-  openGraph: { title: "OceanBrown — Digital products built for real needs", description: "Custom software, websites, mobile apps, automation, and telecom solutions from The Gambia.", type: "website", locale: "en_GB", siteName: "OceanBrown", url: "/", images: [{url:"/oceanbrown-network.webp",width:1920,height:1210,alt:"OceanBrown digital connections across Africa"}] },
-  twitter: { card: "summary_large_image", title: "OceanBrown — Digital products built for real needs", description: "Custom software, websites, mobile apps, automation, and telecom solutions from The Gambia.", images: ["/oceanbrown-network.webp"] },
+  openGraph: { title: "OceanBrown — Digital products built for real needs", description: "Custom software, websites, mobile apps, automation, and telecom solutions from The Gambia.", type: "website", locale: "en_GB", siteName: "OceanBrown", url: "/", images: [{url:"/oceanbrown-logo.png",width:629,height:129,alt:"OceanBrown — Software Development and IT Services"}] },
+  twitter: { card: "summary_large_image", title: "OceanBrown — Digital products built for real needs", description: "Custom software, websites, mobile apps, automation, and telecom solutions from The Gambia.", images: ["/oceanbrown-logo.png"] },
   robots: { index: true, follow: true },
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };

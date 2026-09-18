@@ -1,0 +1,8 @@
+"use client";
+/* eslint-disable @next/next/no-img-element */
+import { FormEvent,useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { LockKeyhole,ShieldCheck } from "lucide-react";
+import "./login.css";
+export default function Login(){const router=useRouter();const[error,setError]=useState("");const[busy,setBusy]=useState(false);async function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();setBusy(true);setError("");const data=new FormData(e.currentTarget);const r=await fetch("/api/auth/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:data.get("email"),password:data.get("password")})});const body=await r.json().catch(()=>({}));if(!r.ok){setError(body.error||"Login failed.");setBusy(false);return}router.replace("/admin");router.refresh()}return <main className="login-page"><section><Link href="/" className="login-brand"><img src="/oceanbrown-logo.png" alt="OceanBrown" width="629" height="129"/></Link><div className="login-icon"><LockKeyhole/></div><p>Secure administration</p><h1>Command Centre</h1><span>Sign in to manage website content and client enquiries.</span><form onSubmit={submit}><label>Email address<input name="email" type="email" autoComplete="username" required/></label><label>Password<input name="password" type="password" autoComplete="current-password" minLength={12} required/></label>{error&&<div className="login-error" role="alert">{error}</div>}<button disabled={busy}>{busy?"Signing in…":"Sign in"}</button></form><small><ShieldCheck/> Protected by encrypted HTTPS and a secure session cookie.</small></section></main>}
